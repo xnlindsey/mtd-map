@@ -1,3 +1,9 @@
+
+---
+layout: default
+title: Urbana-Champaign MTD Map
+---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,3 +28,4 @@
   
 </body>
 </html>
+<div id="map" style="height: 100vh;"></div>
