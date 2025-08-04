@@ -67,5 +67,16 @@ async function fetchVehicles() {
   }
 }
 
+fetch('/routes')
+  .then(res => res.json())
+  .then(routes => {
+    routes.forEach(route => {
+      console.log(`Route ${route.route_short_name} uses color #${route.route_color}`);
+    });
+  });
+
+
+
+L.polyline(shapeCoordsArray, { color: `#${routeColor}` }).addTo(map);
 fetchVehicles();
 setInterval(fetchVehicles, 5000);
