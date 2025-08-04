@@ -1,31 +1,51 @@
 ---
 layout: default
-title: Urbana-Champaign MTD Map
+title: Live Urbana-Champaign MTD Map
 ---
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>MTD Map</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <link rel="stylesheet" href="style.css" />
-        <style>
-          #map { height: 100vh; width: 100vw; }
-        </style>
-      </head>
-      <body>
-        <div id="map" style="height: 100vh;"></div>
-        <div style="position: fixed; bottom: 10px; right: 10px; background: white; padding: 10px; z-index: 1000; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.3);">
-          <label for="refreshRate">Refresh interval (seconds): <span id="intervalValue">15</span></label><br>
-          <input type="range" id="refreshRate" min="1" max="30" value="15" />
-        </div>
-        <div id="map"></div>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script src="script.js"></script>
-      
-        
-        
-        
-      </body>
-      
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MTD Map</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Leaflet Routing Machine CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%; overflow: hidden;
+    }
+    #map {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet Rotated Marker plugin -->
+  <script src="https://unpkg.com/leaflet-rotatedmarker@0.2.0/leaflet.rotatedMarker.min.js"></script>
+  <!-- Leaflet Routing Machine -->
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <div style="position: fixed; bottom: 10px; right: 10px; background: white; padding: 10px; z-index: 1000; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.3);">
+    <label for="refreshRate">Refresh interval (seconds): <span id="intervalValue">15</span></label><br />
+    <input type="range" id="refreshRate" min="1" max="30" value="15" />
+  </div>
+
+  <!-- Your script (defer to ensure DOM and libs are ready) -->
+  <script src="script.js" defer></script>
+
+</body>
 </html>
